@@ -48,8 +48,7 @@
                   {
                     "name": "message",
                     "value": null,
-                    "required": false,
-                    "type": 1
+                    "required": false
                   },
                   {
                     "name": "flowInfo",
