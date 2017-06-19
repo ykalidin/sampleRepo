@@ -47,7 +47,7 @@
                 "attributes": [
                   {
                     "name": "message",
-                    "value": null,
+                    "value": "",
                     "required": false,
                     "type": "string"
                   },
