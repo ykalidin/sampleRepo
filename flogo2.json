@@ -47,9 +47,9 @@
                 "attributes": [
                   {
                     "name": "message",
-                    "value": "success",
+                    "value": null,
                     "required": false,
-                    "type": "string"
+                    "type": "params"
                   },
                   {
                     "name": "flowInfo",
