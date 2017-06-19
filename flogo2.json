@@ -162,7 +162,7 @@
                 "attributes": [
                   {
                     "name": "code",
-                    "value": 400,
+                    "value": 200,
                     "required": true,
                     "type": "integer"
                   },
