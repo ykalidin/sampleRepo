@@ -49,7 +49,7 @@
                     "name": "message",
                     "value": null,
                     "required": false,
-                    "type": "params"
+                    "type": 1
                   },
                   {
                     "name": "flowInfo",
