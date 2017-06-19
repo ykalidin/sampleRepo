@@ -47,7 +47,7 @@
                 "attributes": [
                   {
                     "name": "message",
-                    "value": "",
+                    "value": "success",
                     "required": false,
                     "type": "string"
                   },
