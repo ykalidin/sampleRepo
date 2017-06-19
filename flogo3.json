@@ -9,7 +9,6 @@
       "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub ",
       "description": "The trigger on 'orders' topic",
       "settings": {
-        "topic": "orders",
         "BrokerUrl":"localhost:9092"
       },
       "id": "orders_trigger",
