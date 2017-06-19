@@ -5,22 +5,20 @@
   "description": "",
   "triggers": [
     {
-      "name": "Receive HTTP Message",
-      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
-      "description": "Simple REST Trigger",
+      "name": "OrdersTrigger",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub ",
+      "description": "The trigger on 'orders' topic",
       "settings": {
-        "port": "9096"
+        "topic": "orders",
+        "BrokerUrl":"localhost:9092"
       },
-      "id": "receive_http_message",
+      "id": "orders_trigger",
       "handlers": [
         {
+          "actionId": "ss",
           "settings": {
-            "method": "GET",
-            "path": "/v1/mg/pets/:petId",
-            "autoIdReply": "false",
-            "useReplyHandler": "false"
-          },
-          "actionId": "ss"
+            "Topic": "orders"
+          }
         }
       ]
     }
