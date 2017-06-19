@@ -129,7 +129,7 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{T.content}.id",
+                                        "value": "{T}",
                                         "mapTo": "message"
                                     }
                                 ]
