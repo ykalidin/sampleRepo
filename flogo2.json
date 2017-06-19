@@ -63,6 +63,13 @@
                     "required": false,
                     "type": "boolean"
                   }
+                ],
+                "inputMappings": [
+                  {
+                    "type": 1,
+                    "value": "{T.pathParams}",
+                    "mapTo": "message"
+                  }
                 ]
               },
               {
