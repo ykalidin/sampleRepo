@@ -176,7 +176,7 @@
                 "inputMappings": [
                   {
                     "type": 1,
-                    "value": "{A3.result}",
+                    "value": "{A3.result}.name",
                     "mapTo": "data"
                   }
                 ]
