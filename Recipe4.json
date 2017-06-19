@@ -37,7 +37,7 @@
                         "type": 1,
                         "tasks": [
                             {
-                                "id": 2,
+                                "id": 1,
                                 "name": "tibco-kafkapub",
                                 "description": "Publish a message to a kafka topic",
                                 "type": 1,
