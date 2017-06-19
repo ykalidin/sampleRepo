@@ -81,7 +81,7 @@
                                 "attributes": [
                                     {
                                         "name": "message",
-                                        "value": 1,
+                                        "value": "success",
                                         "required": false,
                                         "type": "string"
                                     },
@@ -129,7 +129,7 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{T.content}",
+                                        "value": "{T.content}.id",
                                         "mapTo": "message"
                                     }
                                 ]
