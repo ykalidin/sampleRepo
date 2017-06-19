@@ -66,7 +66,7 @@
                 "inputMappings": [
                   {
                     "type": 1,
-                    "value": "{T.pathParams}",
+                    "value": "{T.pathParams}.petId",
                     "mapTo": "message"
                   }
                 ]
