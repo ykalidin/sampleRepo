@@ -14,7 +14,7 @@
         {
           "actionId": "flow",
           "settings": {
-            "Topic": "PublishPet"
+            "Topic": "publishpet"
           }
         }
       ]
@@ -47,7 +47,7 @@
                                     },
                                     {
                                         "name": "Topic",
-                                        "value": "SubscribePet",
+                                        "value": "subscribepet",
                                         "required": false,
                                         "type": "string"
                                     },
