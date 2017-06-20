@@ -8,8 +8,7 @@
       "id": "my_kafka_trigger",
       "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub",
       "settings": {
-        "BrokerUrl": "localhost:9092",
-        "Topic": "syslog"
+        "BrokerUrl": "localhost:9092"
       },
       "handlers": [
         {
