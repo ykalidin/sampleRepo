@@ -9,7 +9,7 @@
             "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
             "description": "Simple REST Trigger",
             "settings": {
-                "port": "9096"
+                "port": "9092"
             },
             "id": "receive_http_message",
             "handlers": [
