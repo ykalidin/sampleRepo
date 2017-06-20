@@ -315,7 +315,7 @@
                     }
                 }
             },
-            "id": "flow",
+            "id": "Recipe1",
             "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
         }
     ]
