@@ -33,36 +33,48 @@
                         "tasks": [
                             {
                                 "id": 2,
-                                 "name": "Log Message(5)",
-                                "description": "Simple Log Activity",
+                                "name": "Invoke REST Service",
+                                "description": "Simple REST Activity",
                                 "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
                                 "attributes": [
                                     {
-                                        "name": "message",
-                                        "value": "",
-                                        "required": false,
+                                        "name": "method",
+                                        "value": "PUT",
+                                        "required": true,
                                         "type": "string"
                                     },
                                     {
-                                        "name": "flowInfo",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
+                                        "name": "uri",
+                                        "value": "http://petstore.swagger.io/v2/pet",
+                                        "required": true,
+                                        "type": "string"
                                     },
                                     {
-                                        "name": "addToFlow",
-                                        "value": "true",
+                                        "name": "pathParams",
+                                        "value": null,
                                         "required": false,
-                                        "type": "boolean"
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "queryParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
                                     }
                                 ],
                                 "inputMappings": [
                                     {
                                         "type": 1,
                                         "value": "{T.message}",
-                                        "mapTo": "message"
+                                        "mapTo": "content"
                                     }
                                 ]
                             },
