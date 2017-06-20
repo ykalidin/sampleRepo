@@ -57,7 +57,7 @@
                                         "required": false,
                                         "type": "boolean"
                                     }
-                                ]
+                                ],
                                 "inputMappings": [
                                     {
                                         "type": 1,
