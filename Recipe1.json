@@ -12,7 +12,7 @@
       },
       "handlers": [
         {
-          "actionId": "flow",
+          "actionId": "Recipe1",
           "settings": {
             "Topic": "syslog"
           }
@@ -22,7 +22,7 @@
     ],
     "actions": [
         {
-            "name": "flow",
+            "name": "Recipe1",
             "data": {
                 "flow": {
                     "type": 1,
