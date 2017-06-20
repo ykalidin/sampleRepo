@@ -14,7 +14,7 @@
         {
           "actionId": "Recipe1",
           "settings": {
-            "Topic": "orders"
+            "Topic": "users"
           }
         }
       ]
