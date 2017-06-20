@@ -6,15 +6,15 @@
     "triggers": [
         {
       "id": "my_kafka_trigger",
-      "ref": "github.com/wnichols/kafkasub",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub",
       "settings": {
         "BrokerUrl": "localhost:9092"
       },
       "handlers": [
         {
-          "actionId": "Recipe1",
+          "actionId": "flow",
           "settings": {
-            "Topic": "users"
+            "Topic": "syslog"
           }
         }
       ]
@@ -22,7 +22,7 @@
     ],
     "actions": [
         {
-            "name": "Recipe1",
+            "name": "flow",
             "data": {
                 "flow": {
                     "type": 1,
@@ -315,7 +315,7 @@
                     }
                 }
             },
-            "id": "Recipe1",
+            "id": "flow",
             "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
         }
     ]
