@@ -41,13 +41,13 @@
                                 "attributes": [
                                     {
                                         "name": "method",
-                                        "value": "PUT",
+                                        "value": "GET",
                                         "required": true,
                                         "type": "string"
                                     },
                                     {
                                         "name": "uri",
-                                        "value": "http://petstore.swagger.io/v2/pet",
+                                        "value": "http://petstore.swagger.io/v2/pet/:id",
                                         "required": true,
                                         "type": "string"
                                     },
@@ -66,15 +66,15 @@
                                     {
                                         "name": "content",
                                         "value": null,
-                                        "required": true,
+                                        "required": false,
                                         "type": "any"
                                     }
                                 ],
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{T.message}",
-                                        "mapTo": "content"
+                                        "value": "{T.message}.id",
+                                        "mapTo": "pathParams.id"
                                     }
                                 ]
                             },
