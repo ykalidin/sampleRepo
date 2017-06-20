@@ -42,6 +42,17 @@
                                     {
                                         "name": "method",
                                         "value": "PUT",
+{
+                                "id": 2,
+                                "name": "Invoke REST Service",
+                                "description": "Simple REST Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                                "attributes": [
+                                    {
+                                        "name": "method",
+                                        "value": "PUT",
                                         "required": true,
                                         "type": "string"
                                     },
@@ -66,7 +77,7 @@
                                     {
                                         "name": "content",
                                         "value": "{\n  \"id\": 0,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
-                                        "required": true,
+                                        "required": false,
                                         "type": "any"
                                     }
                                 ]
