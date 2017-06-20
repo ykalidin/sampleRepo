@@ -65,16 +65,9 @@
                                     },
                                     {
                                         "name": "content",
-                                        "value": null,
+                                        "value": "{\n  \"id\": 0,\n  \"category\": {\n    \"id\": 0,\n    \"name\": \"string\"\n  },\n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ],\n  \"status\": \"available\"\n}",
                                         "required": false,
                                         "type": "any"
-                                    }
-                                ],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{T.result}",
-                                        "mapTo": "content"
                                     }
                                 ]
                             },
