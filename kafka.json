@@ -70,9 +70,48 @@
                     "mapTo": "message"
                   }
                 ]
-              }
+              },{
+                                "id": 3,
+                                "name": "tibco-kafkapub",
+                                "description": "Publish a message to a kafka topic",
+                                "type": 1,
+                                "activityType": "tibco-kafkapub",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/kafkapub",
+                                "attributes": [
+                                    {
+                                        "name": "BrokerUrls",
+                                        "value": "localhost:9092",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "Topic",
+                                        "value": "SubscribePet",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "Message",
+                                        "value": "Sent message to SubscribePet",
+                                        "required": false,
+                                        "type": "string"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{T.message}",
+                                        "mapTo": "Message"
+                                    }
+                                ]
+                            }
                         ],
-                        "links": [],
+                        "links": [{
+                                "id": 1,
+                                "from": 2,
+                                "to": 3,
+                                "type": 0
+                            }],
                         "attributes": []
                     }
         }
