@@ -15,7 +15,7 @@
       "handlers": [
         {
           "settings": {
-            "Topic": "syslog",
+            "Topic": "orders",
             "partitions": null,
             "group": null,
             "offset": null
