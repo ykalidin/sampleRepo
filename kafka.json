@@ -33,34 +33,6 @@
                         "tasks": [
                             {
                                 "id": 2,
-                                "name": "Log Message",
-                                "description": "Simple Log Activity",
-                                "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                                "attributes": [
-                                    {
-                                        "name": "message",
-                                        "value": "",
-                                        "required": false,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "flowInfo",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    },
-                                    {
-                                        "name": "addToFlow",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": 3,
                                 "name": "Invoke REST Service",
                                 "description": "Simple REST Activity",
                                 "type": 1,
@@ -96,6 +68,41 @@
                                         "value": null,
                                         "required": true,
                                         "type": "any"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "name": "Log Message",
+                                "description": "Simple Log Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "attributes": [
+                                    {
+                                        "name": "message",
+                                        "value": "",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "flowInfo",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "addToFlow",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "message"
                                     }
                                 ]
                             }
