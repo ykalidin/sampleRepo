@@ -94,7 +94,7 @@
                                     {
                                         "name": "content",
                                         "value": "{\n  \"id\": 43,\n  \n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ]\n}",
-                                        "required": false,
+                                        "required": true,
                                         "type": "any"
                                     }
                                 ]
