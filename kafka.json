@@ -69,13 +69,13 @@
                                 "attributes": [
                                     {
                                         "name": "method",
-                                        "value": "PUT",
+                                        "value": "GET",
                                         "required": true,
                                         "type": "string"
                                     },
                                     {
                                         "name": "uri",
-                                        "value": "http://petstore.swagger.io/v2/pet",
+                                        "value": "http://petstore.swagger.io/v2/pet/43",
                                         "required": true,
                                         "type": "string"
                                     },
@@ -93,7 +93,7 @@
                                     },
                                     {
                                         "name": "content",
-                                        "value": "{\n  \"id\": 43,\n  \n  \"name\": \"doggie\",\n  \"photoUrls\": [\n    \"string\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 0,\n      \"name\": \"string\"\n    }\n  ]\n}",
+                                        "value": null,
                                         "required": true,
                                         "type": "any"
                                     }
