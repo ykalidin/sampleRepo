@@ -6,7 +6,7 @@
     "triggers": [
         {
       "id": "my_kafka_trigger",
-      "ref": "github.com/wnichols/kafkasub",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub",
       "settings": {
         "BrokerUrl": "localhost:9092"
       },
@@ -61,8 +61,8 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{T.result}",
-                                        "mapTo": "message"
+                                        "value": "{T.message}",
+                                        "mapTo": "Message"
                                     }
                                 ]
                             }
