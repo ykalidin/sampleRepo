@@ -32,48 +32,8 @@
                         "type": 1,
                         "tasks": [
                             {
-                                "id": 2,
-                                "name": "Invoke REST Service",
-                                "description": "Simple REST Activity",
-                                "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
-                                "attributes": [
-                                    {
-                                        "name": "method",
-                                        "value": "GET",
-                                        "required": true,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "uri",
-                                        "value": "http://petstore.swagger.io/v2/pet/43",
-                                        "required": true,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "pathParams",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "params"
-                                    },
-                                    {
-                                        "name": "queryParams",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "params"
-                                    },
-                                    {
-                                        "name": "content",
-                                        "value": null,
-                                        "required": true,
-                                        "type": "any"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": 3,
-                                "name": "Log Message",
+                                "id": 4,
+                                "name": "Log Message(1)",
                                 "description": "Simple Log Activity",
                                 "type": 1,
                                 "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
@@ -101,8 +61,36 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{A2.result}",
+                                        "value": "{T.message}",
                                         "mapTo": "message"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "name": "Log Message",
+                                "description": "Simple Log Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "attributes": [
+                                    {
+                                        "name": "message",
+                                        "value": "fdgrtre",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "flowInfo",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "addToFlow",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
                                     }
                                 ]
                             }
