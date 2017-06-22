@@ -52,7 +52,7 @@
                                     },
                                     {
                                         "name": "Topic",
-                                        "value": "syslog1",
+                                        "value": "syslog",
                                         "required": false,
                                         "type": "string"
                                     },
