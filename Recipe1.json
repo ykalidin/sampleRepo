@@ -14,7 +14,7 @@
         {
           "actionId": "flow",
           "settings": {
-            "Topic": "orders"
+            "Topic": "syslog"
           }
         }
       ]
