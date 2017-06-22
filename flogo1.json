@@ -37,45 +37,32 @@
                         "type": 1,
                         "tasks": [
                             {
-                                "id": 2,
-                                "name": "Invoke REST Service",
-                                "description": "Simple REST Activity",
-                                "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
-                                "attributes": [
-                                    {
-                                        "name": "method",
-                                        "value": "GET",
-                                        "required": true,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "uri",
-                                        "value": "http://petstore.swagger.io/v2/pet/1",
-                                        "required": true,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "pathParams",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "params"
-                                    },
-                                    {
-                                        "name": "queryParams",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "params"
-                                    },
-                                    {
-                                        "name": "content",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "any"
-                                    }
-                                ]
-                            }
+                "id": 2,
+                "name": "Log Message",
+                "description": "Simple Log Activity",
+                "type": 1,
+                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "attributes": [
+                  {
+                    "name": "message",
+                    "value": "success",
+                    "required": false
+                  },
+                  {
+                    "name": "flowInfo",
+                    "value": "false",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "addToFlow",
+                    "value": "false",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ]
+              }
                         ],
                         "links": [],
                         "attributes": []
