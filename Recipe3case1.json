@@ -177,7 +177,7 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{A2.result}",
+                                        "value": "{T.content}",
                                         "mapTo": "message"
                                     }
                                 ]
