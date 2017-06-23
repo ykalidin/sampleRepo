@@ -77,7 +77,7 @@
                                 "description": "Simple Log Activity",
                                 "type": 1,
                                 "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                                 "attributes": [
                                     {
                                         "name": "message",
