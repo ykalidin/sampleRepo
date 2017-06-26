@@ -39,10 +39,10 @@
                             {
                                 "id": 2,
                                 "name": "tibco-kafkapub",
-                                "description": "Publish a message to a kafka topic",
+                                "description": "Publish a message to a rest topic",
                                 "type": 1,
                                 "activityType": "tibco-kafkapub",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/kafkapub",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
                                 "attributes": [
                                     {
                                         "name": "BrokerUrls",
@@ -52,13 +52,13 @@
                                     },
                                     {
                                         "name": "Topic",
-                                        "value": "syslog",
+                                        "value": "syslog1",
                                         "required": false,
                                         "type": "string"
                                     },
                                     {
-                                        "name": "Message",
-                                        "value": "mary had a little lamb",
+                                        "name": "Messages",
+                                        "value": "mary has a little lamb",
                                         "required": false,
                                         "type": "string"
                                     }
@@ -67,7 +67,7 @@
                                     {
                                         "type": 1,
                                         "value": "{T.content}",
-                                        "mapTo": "Message"
+                                        "mapTo": "Messages"
                                     }
                                 ]
                             },
