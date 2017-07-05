@@ -17,8 +17,8 @@
                     "settings": {
                         "method": "POST",
                         "path": "/json",
-                        "autoIdReply": "true",
-                        "useReplyHandler": "true"
+                        "autoIdReply": "false",
+                        "useReplyHandler": "false"
                     },
                     "actionId": "app"
                 }
@@ -30,6 +30,7 @@
             "name": "App",
             "data": {
                 "flow": {
+                    "explicitReply": true,
                     "type": 1,
                     "attributes": [],
                     "rootTask": {
