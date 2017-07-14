@@ -1,0 +1,459 @@
+{
+    "name": "Region Based Routing",
+    "type": "flogo:app",
+    "version": "0.0.1",
+    "description": "",
+    "triggers": [
+        {
+            "name": "Receive Mashling HTTP Message",
+            "ref": "github.com/rameshpolishetti/triggerhttpnew",
+            "description": "Simple REST Trigger for mashling gateway",
+            "settings": {
+                "port": "9096"
+            },
+            "id": "receive_mashling_http_message",
+            "handlers": [
+                {
+                    "settings": {
+                        "method": "PUT",
+                        "path": "/test",
+                        "autoIdReply": "false",
+                        "useReplyHandler": "false",
+                        "Condition": "${trigger.content.country == USA}"
+                    },
+                    "actionId": "usa_region_check"
+                },
+                {
+                    "settings": {
+                        "method": "PUT",
+                        "path": "/test",
+                        "autoIdReply": "false",
+                        "useReplyHandler": "false",
+                        "Condition": "${trigger.content.country in (IND,CHN,JPN)}"
+                    },
+                    "actionId": "asia_region_check"
+                },
+                {
+                    "settings": {
+                        "method": "PUT",
+                        "path": "/test",
+                        "autoIdReply": "false",
+                        "useReplyHandler": "false",
+                        "Condition": null
+                    },
+                    "actionId": "z_all_region_check"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "USA Region check",
+            "data": {
+                "flow": {
+                    "type": 1,
+                    "attributes": [],
+                    "rootTask": {
+                        "id": 1,
+                        "type": 1,
+                        "tasks": [
+                            {
+                                "id": 2,
+                                "name": "Invoke REST Service",
+                                "description": "Simple REST Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                                "attributes": [
+                                    {
+                                        "name": "method",
+                                        "value": "GET",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "uri",
+                                        "value": "https://restcountries.eu/rest/v2/region/americas?fields=name;capital",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "pathParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "queryParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "name": "Log Message",
+                                "description": "Simple Log Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "attributes": [
+                                    {
+                                        "name": "message",
+                                        "value": "",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "flowInfo",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "addToFlow",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "message"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 4,
+                                "name": "Reply To Trigger",
+                                "description": "Simple Reply Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-reply",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
+                                "attributes": [
+                                    {
+                                        "name": "code",
+                                        "value": "200",
+                                        "required": true,
+                                        "type": "integer"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "data"
+                                    }
+                                ]
+                            }
+                        ],
+                        "links": [
+                            {
+                                "id": 1,
+                                "from": 2,
+                                "to": 3,
+                                "type": 0
+                            },
+                            {
+                                "id": 2,
+                                "from": 3,
+                                "to": 4,
+                                "type": 0
+                            }
+                        ],
+                        "attributes": []
+                    }
+                }
+            },
+            "id": "usa_region_check",
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+        },
+        {
+            "name": "Asia Region Check",
+            "data": {
+                "flow": {
+                    "type": 1,
+                    "attributes": [],
+                    "rootTask": {
+                        "id": 1,
+                        "type": 1,
+                        "tasks": [
+                            {
+                                "id": 2,
+                                "name": "Invoke REST Service",
+                                "description": "Simple REST Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                                "attributes": [
+                                    {
+                                        "name": "method",
+                                        "value": "GET",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "uri",
+                                        "value": "https://restcountries.eu/rest/v2/region/asia?fields=name;currencies",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "pathParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "queryParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "name": "Log Message",
+                                "description": "Simple Log Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "attributes": [
+                                    {
+                                        "name": "message",
+                                        "value": "",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "flowInfo",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "addToFlow",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "message"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 4,
+                                "name": "Reply To Trigger",
+                                "description": "Simple Reply Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-reply",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
+                                "attributes": [
+                                    {
+                                        "name": "code",
+                                        "value": "200",
+                                        "required": true,
+                                        "type": "integer"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "data"
+                                    }
+                                ]
+                            }
+                        ],
+                        "links": [
+                            {
+                                "id": 1,
+                                "from": 2,
+                                "to": 3,
+                                "type": 0
+                            },
+                            {
+                                "id": 2,
+                                "from": 3,
+                                "to": 4,
+                                "type": 0
+                            }
+                        ],
+                        "attributes": []
+                    }
+                }
+            },
+            "id": "asia_region_check",
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+        },
+        {
+            "name": "ZAll Region check",
+            "data": {
+                "flow": {
+                    "type": 1,
+                    "attributes": [],
+                    "rootTask": {
+                        "id": 1,
+                        "type": 1,
+                        "tasks": [
+                            {
+                                "id": 2,
+                                "name": "Invoke REST Service",
+                                "description": "Simple REST Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                                "attributes": [
+                                    {
+                                        "name": "method",
+                                        "value": "GET",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "uri",
+                                        "value": "https://restcountries.eu/rest/v2/all?fields=name;capital",
+                                        "required": true,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "pathParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "queryParams",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "params"
+                                    },
+                                    {
+                                        "name": "content",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 3,
+                                "name": "Log Message",
+                                "description": "Simple Log Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "attributes": [
+                                    {
+                                        "name": "message",
+                                        "value": "",
+                                        "required": false,
+                                        "type": "string"
+                                    },
+                                    {
+                                        "name": "flowInfo",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    },
+                                    {
+                                        "name": "addToFlow",
+                                        "value": "true",
+                                        "required": false,
+                                        "type": "boolean"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "message"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 4,
+                                "name": "Reply To Trigger",
+                                "description": "Simple Reply Activity",
+                                "type": 1,
+                                "activityType": "github-com-tibco-software-flogo-contrib-activity-reply",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
+                                "attributes": [
+                                    {
+                                        "name": "code",
+                                        "value": "200",
+                                        "required": true,
+                                        "type": "integer"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "data"
+                                    }
+                                ]
+                            }
+                        ],
+                        "links": [
+                            {
+                                "id": 1,
+                                "from": 2,
+                                "to": 3,
+                                "type": 0
+                            },
+                            {
+                                "id": 2,
+                                "from": 3,
+                                "to": 4,
+                                "type": 0
+                            }
+                        ],
+                        "attributes": []
+                    }
+                }
+            },
+            "id": "z_all_region_check",
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+        }
+    ]
+}
