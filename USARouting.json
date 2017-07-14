@@ -52,7 +52,7 @@
                                     },
                                     {
                                         "name": "uri",
-                                        "value": "https://restcountries.eu/rest/v2/americas?fields=name;capital",
+                                        "value": "https://restcountries.eu/rest/v2/region/americas?fields=name;capital",
                                         "required": true,
                                         "type": "string"
                                     },
