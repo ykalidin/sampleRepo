@@ -1,33 +1,33 @@
 {
-    "name": "USA Region Based Routing",
+    "name": "USA",
     "type": "flogo:app",
     "version": "0.0.1",
     "description": "",
     "triggers": [
         {
-            "name": "Receive Mashling HTTP Message",
-            "ref": "github.com/rameshpolishetti/triggerhttpnew",
-            "description": "Simple REST Trigger for mashling gateway",
+            "name": "Receive HTTP Message",
+            "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
+            "description": "Simple REST Trigger",
             "settings": {
                 "port": "9096"
             },
-            "id": "receive_mashling_http_message",
+            "id": "receive_http_message",
             "handlers": [
                 {
                     "settings": {
                         "method": "PUT",
                         "path": "/test",
-                        "autoIdReply": "false",
-                        "useReplyHandler": "false"
+                        "autoIdReply": null,
+                        "useReplyHandler": null
                     },
-                    "actionId": "usa_region_check"
+                    "actionId": "flow"
                 }
             ]
         }
     ],
     "actions": [
         {
-            "name": "USA Region check",
+            "name": "flow",
             "data": {
                 "flow": {
                     "type": 1,
@@ -41,7 +41,7 @@
                                 "name": "Invoke REST Service",
                                 "description": "Simple REST Activity",
                                 "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-rest",
+                                "activityType": "tibco-rest",
                                 "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
                                 "attributes": [
                                     {
@@ -52,7 +52,7 @@
                                     },
                                     {
                                         "name": "uri",
-                                        "value": "https://restcountries.eu/rest/v2/region/americas?fields=name;capital",
+                                        "value": "https://restcountries.eu/rest/v2/americas?fields=name;capital",
                                         "required": true,
                                         "type": "string"
                                     },
@@ -81,7 +81,7 @@
                                 "name": "Log Message",
                                 "description": "Simple Log Activity",
                                 "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
+                                "activityType": "tibco-log",
                                 "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
                                 "attributes": [
                                     {
@@ -92,13 +92,13 @@
                                     },
                                     {
                                         "name": "flowInfo",
-                                        "value": "true",
+                                        "value": "false",
                                         "required": false,
                                         "type": "boolean"
                                     },
                                     {
                                         "name": "addToFlow",
-                                        "value": "true",
+                                        "value": "false",
                                         "required": false,
                                         "type": "boolean"
                                     }
@@ -116,7 +116,7 @@
                                 "name": "Reply To Trigger",
                                 "description": "Simple Reply Activity",
                                 "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-reply",
+                                "activityType": "tibco-reply",
                                 "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
                                 "attributes": [
                                     {
@@ -159,7 +159,7 @@
                     }
                 }
             },
-            "id": "usa_region_check",
+            "id": "flow",
             "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
         }
     ]
