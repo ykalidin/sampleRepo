@@ -32,6 +32,7 @@
             "data": {
                 "flow": {
                     "type": 1,
+                     "explicitReply": true,
                     "attributes": [],
                     "rootTask": {
                         "id": 1,
