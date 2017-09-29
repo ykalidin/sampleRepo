@@ -74,7 +74,14 @@
 										"required": false,
 										"type": "any"
 									}
-								]
+								],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{T.pathParams}.id",
+                                        "mapTo": "pathParams.petId"
+                                    }
+                                ]
 							},
 							{
                                 "id": 3,
