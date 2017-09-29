@@ -110,6 +110,35 @@
                                         "type": "boolean"
                                     }
                                 ]
+                            },
+                            {
+                                "id": 4,
+                                "name": "Reply To Trigger",
+                                "description": "Simple Reply Activity",
+                                "type": 1,
+                                "activityType": "tibco-reply",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
+                                "attributes": [
+                                    {
+                                        "name": "code",
+                                        "value": "200",
+                                        "required": true,
+                                        "type": "integer"
+                                    },
+                                    {
+                                        "name": "data",
+                                        "value": null,
+                                        "required": false,
+                                        "type": "any"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "data"
+                                    }
+                                ]
                             }
 						],
 						"links": [
@@ -119,6 +148,12 @@
 								"to": 3,
 								"type": 0,
 								"value": "${A2.result}.code==1"
+							},
+                            {
+								"id": 2,
+								"from": 3,
+								"to": 4,
+								"type": 0
 							}
 						],
 						"attributes": []
