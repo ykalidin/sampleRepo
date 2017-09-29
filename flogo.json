@@ -78,7 +78,7 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{T.pathParams}.id",
+                                        "value": "{T.pathParams}",
                                         "mapTo": "pathParams.petId"
                                     }
                                 ]
