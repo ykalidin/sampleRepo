@@ -31,6 +31,7 @@
 			"data": {
 				"flow": {
 					"type": 1,
+                    "explicitReply": true,
 					"attributes": [],
 					"rootTask": {
 						"id": 1,
@@ -108,6 +109,13 @@
                                         "value": "false",
                                         "required": false,
                                         "type": "boolean"
+                                    }
+                                ],
+                                "inputMappings": [
+                                    {
+                                        "type": 1,
+                                        "value": "{A2.result}",
+                                        "mapTo": "message"
                                     }
                                 ]
                             },
