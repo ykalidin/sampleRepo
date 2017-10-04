@@ -104,38 +104,32 @@
                                     }
                                 ]
                             },
-                            {
-                                "id": 4,
-                                "name": "Log Message (2)",
-                                "description": "Simple Log Activity",
+                           {
+                                "id": 5,
+                                "name": "Reply To Trigger",
+                                "description": "Simple Reply Activity",
                                 "type": 1,
-                                "activityType": "tibco-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                                "activityType": "tibco-reply",
+                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
                                 "attributes": [
                                     {
-                                        "name": "message",
-                                        "value": "",
-                                        "required": false,
-                                        "type": "string"
+                                        "name": "code",
+                                        "value": "200",
+                                        "required": true,
+                                        "type": "integer"
                                     },
                                     {
-                                        "name": "flowInfo",
-                                        "value": "true",
+                                        "name": "data",
+                                        "value": null,
                                         "required": false,
-                                        "type": "boolean"
-                                    },
-                                    {
-                                        "name": "addToFlow",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
+                                        "type": "any"
                                     }
                                 ],
                                 "inputMappings": [
                                     {
                                         "type": 1,
                                         "value": "{A2.result}",
-                                        "mapTo": "message"
+                                        "mapTo": "data"
                                     }
                                 ]
                             }
@@ -150,7 +144,7 @@
                             {
                                 "id": 2,
                                 "from": 3,
-                                "to": 4,
+                                "to": 5,
                                 "type": 0
                             }
                         ],
