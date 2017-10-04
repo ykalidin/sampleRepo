@@ -66,7 +66,8 @@
 									{
 										"name": "queryParams",
 										"value": {
-											"APPID": "6231d08ce5469ffd47f0cd92f4b9af3e"
+											"APPID": "6231d08ce5469ffd47f0cd92f4b9af3e",
+											"q":"vizag"
 										},
 										"required": false,
 										"type": "params"
@@ -76,13 +77,6 @@
 										"value": null,
 										"required": false,
 										"type": "any"
-									}
-								],
-								"inputMappings": [
-									{
-										"type": 1,
-										"value": "vizag",
-										"mapTo": "queryParams.q"
 									}
 								]
                             },
