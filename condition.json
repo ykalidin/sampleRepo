@@ -84,42 +84,6 @@
                                     }
                                 ]
                             },
-
-                            {
-                                "id": 4,
-                                "name": "Log Message (2)",
-                                "description": "Simple Log Activity",
-                                "type": 1,
-                                "activityType": "github-com-tibco-software-flogo-contrib-activity-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                                "attributes": [
-                                    {
-                                        "name": "message",
-                                        "value": "",
-                                        "required": false,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "flowInfo",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    },
-                                    {
-                                        "name": "addToFlow",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    }
-                                ],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{A2.result}",
-                                        "mapTo": "message"
-                                    }
-                                ]
-                            },
                             {
                                 "id": 13,
                                 "name": "Reply To Trigger (3)",
@@ -154,12 +118,6 @@
                             {
                                 "id": 1,
                                 "from": 2,
-                                "to": 4,
-                                "type": 0
-                            },
-                            {
-                                "id": 2,
-                                "from": 4,
                                 "to": 13,
                                 "type": 0
                             }
