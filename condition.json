@@ -142,7 +142,7 @@
                                 "inputMappings": [
                                     {
                                         "type": 1,
-                                        "value": "{A2.result}.id",
+                                        "value": "{A2.result}",
                                         "mapTo": "message"
                                     }
                                 ]
