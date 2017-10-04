@@ -31,7 +31,6 @@
             "data": {
                 "flow": {
                     "type": 1,
-			"explicitReply": true,
                     "attributes": [],
                     "rootTask": {
                         "id": 1,
@@ -87,34 +86,6 @@
 								]
 							},
                             {
-                                "id": 3,
-                                "name": "Log Message",
-                                "description": "Simple Log Activity",
-                                "type": 1,
-                                "activityType": "tibco-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                                "attributes": [
-                                    {
-                                        "name": "message",
-                                        "value": "Success",
-                                        "required": false,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "flowInfo",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    },
-                                    {
-                                        "name": "addToFlow",
-                                        "value": "true",
-                                        "required": false,
-                                        "type": "boolean"
-                                    }
-                                ]
-                            },
-                            {
                                 "id": 5,
                                 "name": "Reply To Trigger",
                                 "description": "Simple Reply Activity",
@@ -148,12 +119,6 @@
                             {
                                 "id": 1,
                                 "from": 2,
-                                "to": 3,
-                                "type": 0
-                            },
-                            {
-                                "id": 2,
-                                "from": 3,
                                 "to": 5,
                                 "type": 0
                             }
