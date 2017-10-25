@@ -15,7 +15,7 @@
             "handlers": [
                 {
                     "settings": {
-                        "method": "PUT",
+                        "method": "GET",
                         "path": "/pet",
                         "autoIdReply": "false",
                         "useReplyHandler": "false"
@@ -53,7 +53,7 @@
                                     },
                                     {
                                         "name": "uri",
-                                        "value": "http://petstore.swagger.io/v2/pet",
+                                        "value": "http://petstore.swagger.io/v2/pet/13",
                                         "required": true,
                                         "type": "string"
                                     },
@@ -74,13 +74,6 @@
                                         "value": null,
                                         "required": false,
                                         "type": "any"
-                                    }
-                                ],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{T.content}",
-                                        "mapTo": "content"
                                     }
                                 ]
                             },
