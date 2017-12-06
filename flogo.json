@@ -1,175 +1,171 @@
 {
-	"name": "mashcheck",
-	"type": "flogo:app",
-	"version": "0.0.1",
-	"description": "",
-	"triggers": [
-		{
-			"name": "Receive HTTP Message",
-			"ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/rest",
-			"description": "Simple REST Trigger",
-			"settings": {
-				"port": "8080"
-			},
-			"id": "receive_http_message",
-			"handlers": [
-				{
-					"settings": {
-						"method": "GET",
-						"path": "/path",
-						"autoIdReply": null,
-						"useReplyHandler": null
-					},
-					"actionId": "flow"
-				}
-			]
-		}
-	],
-	"actions": [
-		{
-			"name": "flow",
-			"data": {
-				"flow": {
-					"type": 1,
-                    "explicitReply": true,
-					"attributes": [],
-					"rootTask": {
-						"id": 1,
-						"type": 1,
-						"tasks": [
-							{
-								"id": 2,
-								"name": "Invoke REST Service",
-								"description": "Simple REST Activity",
-								"type": 1,
-								"activityType": "tibco-rest",
-								"activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
-								"attributes": [
-									{
-										"name": "method",
-										"value": "GET",
-										"required": true,
-										"type": "string"
-									},
-									{
-										"name": "uri",
-										"value": "http://petstore.swagger.io/v2/pet/:petId",
-										"required": true,
-										"type": "string"
-									},
-									{
-										"name": "pathParams",
-										"value": null,
-										"required": false,
-										"type": "params"
-									},
-									{
-										"name": "queryParams",
-										"value": null,
-										"required": false,
-										"type": "params"
-									},
-									{
-										"name": "content",
-										"value": null,
-										"required": false,
-										"type": "any"
-									}
-								],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{T.pathParams}",
-                                        "mapTo": "pathParams"
-                                    }
-                                ]
-							},
-							{
-                                "id": 3,
-                                "name": "Log Message (5)",
-                                "description": "Simple Log Activity",
-                                "type": 1,
-                                "activityType": "tibco-log",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
-                                "attributes": [
-                                    {
-                                        "name": "message",
-                                        "value": "success",
-                                        "required": false,
-                                        "type": "string"
-                                    },
-                                    {
-                                        "name": "flowInfo",
-                                        "value": "false",
-                                        "required": false,
-                                        "type": "boolean"
-                                    },
-                                    {
-                                        "name": "addToFlow",
-                                        "value": "false",
-                                        "required": false,
-                                        "type": "boolean"
-                                    }
-                                ],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{A2.result}",
-                                        "mapTo": "message"
-                                    }
-                                ]
-                            },
-                            {
-                                "id": 4,
-                                "name": "Reply To Trigger",
-                                "description": "Simple Reply Activity",
-                                "type": 1,
-                                "activityType": "tibco-reply",
-                                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
-                                "attributes": [
-                                    {
-                                        "name": "code",
-                                        "value": "200",
-                                        "required": true,
-                                        "type": "integer"
-                                    },
-                                    {
-                                        "name": "data",
-                                        "value": null,
-                                        "required": false,
-                                        "type": "any"
-                                    }
-                                ],
-                                "inputMappings": [
-                                    {
-                                        "type": 1,
-                                        "value": "{A2.result}",
-                                        "mapTo": "data"
-                                    }
-                                ]
-                            }
-						],
-						"links": [
-							{
-								"id": 1,
-								"from": 2,
-								"to": 3,
-								"type": 0,
-								"value": "${A2.result}.code==1"
-							},
-                            {
-								"id": 2,
-								"from": 3,
-								"to": 4,
-								"type": 0
-							}
-						],
-						"attributes": []
-					}
-				}
-			},
-			"id": "flow",
-			"ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
-		}
-	]
-}
+    "name": "flowApp10Nov",
+    "type": "flogo:app",
+    "version": "0.0.1",
+    "description": "",
+    "triggers": [],
+    "actions": [
+      {
+        "data": {
+          "flow": {
+            "name": "flow",
+            "type": 1,
+            "attributes": [],
+            "rootTask": {
+              "id": 1,
+              "type": 1,
+              "tasks": [
+                {
+                  "id": "rest_2",
+                  "name": "Invoke REST Service",
+                  "description": "Simple REST Activity",
+                  "type": 1,
+                  "activityType": "tibco-rest",
+                  "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/rest",
+                  "attributes": [
+                    {
+                      "name": "method",
+                      "value": "PUT",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "name": "uri",
+                      "value": "",
+                      "required": true,
+                      "type": "string"
+                    },
+                    {
+                      "name": "pathParams",
+                      "value": null,
+                      "required": false,
+                      "type": "params"
+                    },
+                    {
+                      "name": "queryParams",
+                      "value": null,
+                      "required": false,
+                      "type": "params"
+                    },
+                    {
+                      "name": "content",
+                      "value": null,
+                      "required": false,
+                      "type": "any"
+                    }
+                  ],
+                  "inputMappings": [
+                    {
+                      "type": 1,
+                      "value": "${endPoint}",
+                      "mapTo": "uri"
+                    },
+                    {
+                      "type": 1,
+                      "value": "${content}",
+                      "mapTo": "content"
+                    }
+                  ]
+                },
+                {
+                  "id": "log_3",
+                  "name": "Log Message",
+                  "description": "Simple Log Activity",
+                  "type": 1,
+                  "activityType": "tibco-log",
+                  "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                  "attributes": [
+                    {
+                      "name": "message",
+                      "value": "",
+                      "required": false,
+                      "type": "string"
+                    },
+                    {
+                      "name": "flowInfo",
+                      "value": "false",
+                      "required": false,
+                      "type": "boolean"
+                    },
+                    {
+                      "name": "addToFlow",
+                      "value": "false",
+                      "required": false,
+                      "type": "boolean"
+                    }
+                  ],
+                  "inputMappings": [
+                    {
+                      "type": 1,
+                      "value": "${activity.rest_2.result}",
+                      "mapTo": "message"
+                    }
+                  ]
+                },
+                {
+                  "id": "reply_4",
+                  "name": "Reply To Trigger",
+                  "description": "Simple Reply Activity",
+                  "type": 1,
+                  "activityType": "tibco-reply",
+                  "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/reply",
+                  "attributes": [
+                    {
+                      "name": "code",
+                      "value": "200",
+                      "required": true,
+                      "type": "integer"
+                    },
+                    {
+                      "name": "data",
+                      "value": null,
+                      "required": false,
+                      "type": "any"
+                    }
+                  ],
+                  "inputMappings": [
+                    {
+                      "type": 1,
+                      "value": "${activity.rest_2.result}",
+                      "mapTo": "data"
+                    }
+                  ]
+                }
+              ],
+              "links": [
+                {
+                  "id": 1,
+                  "from": "rest_2",
+                  "to": "log_3",
+                  "type": 0
+                },
+                {
+                  "id": 2,
+                  "from": "log_3",
+                  "to": "reply_4",
+                  "type": 0
+                }
+              ],
+              "attributes": []
+            },
+            "explicitReply": true
+          }
+        },
+        "id": "flow",
+        "metadata": {
+          "input": [
+            {
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "name": "endPoint",
+              "type": "string"
+            }
+          ],
+          "output": []
+        },
+        "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+      }
+    ]
+  }
