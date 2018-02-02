@@ -61,7 +61,7 @@
                       "mapTo": "uri"
                     },
                     {
-                      "type": 4,
+                      "type": 1,
                       "value": "{{$flow.content}}",
                       "mapTo": "content"
                     }
@@ -156,7 +156,7 @@
           "input": [
             {
               "name": "content",
-              "type": "object"
+              "type": "string"
             },
             {
               "name": "endPoint",
