@@ -62,7 +62,7 @@
                     },
                     {
                       "type": 4,
-                      "value": {"{{$flow.content}}"},
+                      "value": "{{$flow.content}}",
                       "mapTo": "content"
                     }
                   ]
