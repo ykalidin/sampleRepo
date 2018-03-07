@@ -1,0 +1,82 @@
+{
+  "name": "kafka_flow2",
+  "type": "flogo:app",
+  "version": "0.0.1",
+  "description": "",
+  "triggers": [
+    {
+      "name": "Receive Kafka Messages",
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/trigger/kafkasub",
+      "description": "Simple Kafka Trigger",
+      "settings": {
+        "BrokerUrl": "localhost:9092"
+      },
+      "id": "receive_kafka_messages",
+      "handlers": [
+        {
+          "settings": {
+            "Topic": "syslog"
+          },
+          "actionId": "new",
+          "actionMappings": {
+            "input": [],
+            "output": []
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "data": {
+        "flow": {
+          "name": "new",
+          "type": 1,
+          "attributes": [],
+          "rootTask": {
+            "id": "root",
+            "type": 1,
+            "tasks": [
+              {
+                "id": "log_2",
+                "name": "Log Message",
+                "description": "Simple Log Activity",
+                "type": 1,
+                "activityType": "tibco-log",
+                "activityRef": "github.com/TIBCOSoftware/flogo-contrib/activity/log",
+                "attributes": [
+                  {
+                    "name": "message",
+                    "value": "success",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "name": "flowInfo",
+                    "value": "true",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "name": "addToFlow",
+                    "value": "true",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ]
+              }
+            ],
+            "links": [],
+            "attributes": []
+          }
+        }
+      },
+      "id": "new",
+      "metadata": {
+        "input": [],
+        "output": []
+      },
+      "ref": "github.com/TIBCOSoftware/flogo-contrib/action/flow"
+    }
+  ]
+}
