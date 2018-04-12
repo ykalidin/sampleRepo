@@ -81,8 +81,8 @@
 								"inputMappings": [
 									{
 										"type": 1,
-										"value": "{T.content}.country",
-										"mapTo": "pathParams.country"
+										"value": "{T.content}",
+										"mapTo": "pathParams"
 									}
 								]
 							},
