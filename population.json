@@ -65,9 +65,7 @@
 									},
 									{
 										"name": "queryParams",
-										"value": {
-											"APPID": "6231d08ce5469ffd47f0cd92f4b9af3e"
-										},
+										"value": null,
 										"required": false,
 										"type": "params"
 									},
