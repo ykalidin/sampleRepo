@@ -79,7 +79,7 @@
 								"inputMappings": [
 									{
 										"type": 1,
-										"value": "{T.content}",
+										"value": "{T.pathParams}",
 										"mapTo": "pathParams"
 									}
 								]
