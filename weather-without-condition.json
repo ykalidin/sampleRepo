@@ -81,7 +81,7 @@
 								"inputMappings": [
 									{
 										"type": 1,
-										"value": "{T.content}.city",
+										"value": "{T.pathParams}.city",
 										"mapTo": "queryParams.q"
 									}
 								]
